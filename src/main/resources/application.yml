@@ -2,10 +2,11 @@ server:
   port: 8088
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
-    username: postgres
-    password: postgres
-    driver-class-name: org.postgresql.Driver
+    url: jdbc:h2:./db/emdb
+    username: htwo
+    password: htwo
+    driver-class-name: org.h2.Driver
   jpa:
     hibernate:
       ddl-auto: update
+    open-in-view: true

@@ -22,4 +22,7 @@ public class Book {
 
     @OneToOne(fetch = FetchType.EAGER)
     private Publisher publisher;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    private Location location;
 }

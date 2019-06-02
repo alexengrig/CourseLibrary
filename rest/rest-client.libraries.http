@@ -1,0 +1,41 @@
+### Save
+
+POST http://{{host}}:{{port}}/{{root}}/{{libraries}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Central Library N.V. Gogol"
+}
+
+### Get
+
+GET http://{{host}}:{{port}}/{{root}}/{{libraries}}/1
+Accept: application/json
+
+### Update
+
+PUT http://{{host}}:{{port}}/{{root}}/{{libraries}}/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Central Library M.Y. Lermontov"
+}
+
+### Delete
+
+DELETE http://{{host}}:{{port}}/{{root}}/{{libraries}}/1
+
+### Search
+
+POST http://{{host}}:{{port}}/{{root}}/{{libraries}}/search
+Accept: application/json
+Content-Type: application/json
+
+{
+  "page": "0",
+  "size": "10"
+}
+
+###

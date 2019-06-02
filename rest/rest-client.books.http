@@ -1,0 +1,91 @@
+### Save
+
+POST http://{{host}}:{{port}}/{{root}}/{{books}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Лолита",
+  "annotation": "\"Лолита\" - главная и лучшая книга Владимира Набокова.",
+  "year": "2016",
+  "authors": [
+    {
+      "name": "Набоков В.В."
+    }
+  ],
+  "publisher": {
+    "name": "Азбука"
+  },
+  "location": {
+    "note": "Some comment",
+    "shelf": {
+      "name": "#1"
+    },
+    "shelving": {
+      "name": "#1"
+    },
+    "library": {
+      "name": "Central Library N.V. Gogol"
+    }
+  }
+}
+
+### Get
+
+GET http://{{host}}:{{port}}/{{root}}/{{books}}/231
+Accept: application/json
+
+### Update
+
+PUT http://{{host}}:{{port}}/{{root}}/{{books}}/231
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Лолита",
+  "annotation": "\"Лолита\" - главная и лучшая книга Владимира Набокова.",
+  "year": "2017",
+  "authors": [
+    {
+      "id": 225,
+      "name": "Набоков В.В."
+    }
+  ],
+  "publisher": {
+    "id": 226,
+    "name": "Азбука"
+  },
+  "location": {
+    "id": 230,
+    "note": "Some comment",
+    "shelf": {
+      "id": 227,
+      "name": "#1"
+    },
+    "shelving": {
+      "id": 228,
+      "name": "#1"
+    },
+    "library": {
+      "id": 229,
+      "name": "Central Library N.V. Gogol"
+    }
+  }
+}
+
+### Delete
+
+DELETE http://{{host}}:{{port}}/{{root}}/{{books}}/1
+
+### Search
+
+POST http://{{host}}:{{port}}/{{root}}/{{books}}/search
+Accept: application/json
+Content-Type: application/json
+
+{
+  "page": "0",
+  "size": "10"
+}
+
+###

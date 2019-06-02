@@ -1,0 +1,41 @@
+### Save
+
+POST http://{{host}}:{{port}}/{{root}}/{{shelves}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "#1"
+}
+
+### Get
+
+GET http://{{host}}:{{port}}/{{root}}/{{shelves}}/1
+Accept: application/json
+
+### Update
+
+PUT http://{{host}}:{{port}}/{{root}}/{{shelves}}/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "#2"
+}
+
+### Delete
+
+DELETE http://{{host}}:{{port}}/{{root}}/{{shelves}}/1
+
+### Search
+
+POST http://{{host}}:{{port}}/{{root}}/{{shelves}}/search
+Accept: application/json
+Content-Type: application/json
+
+{
+  "page": "0",
+  "size": "10"
+}
+
+###

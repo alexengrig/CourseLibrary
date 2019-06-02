@@ -1,0 +1,41 @@
+### Save
+
+POST http://{{host}}:{{port}}/{{root}}/{{publishers}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "PITER"
+}
+
+### Get
+
+GET http://{{host}}:{{port}}/{{root}}/{{publishers}}/1
+Accept: application/json
+
+### Update
+
+PUT http://{{host}}:{{port}}/{{root}}/{{publishers}}/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "AST"
+}
+
+### Delete
+
+DELETE http://{{host}}:{{port}}/{{root}}/{{publishers}}/1
+
+### Search
+
+POST http://{{host}}:{{port}}/{{root}}/{{publishers}}/search
+Accept: application/json
+Content-Type: application/json
+
+{
+  "page": "0",
+  "size": "10"
+}
+
+###

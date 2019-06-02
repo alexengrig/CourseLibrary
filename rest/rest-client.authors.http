@@ -1,0 +1,41 @@
+### Save
+
+POST http://{{host}}:{{port}}/{{root}}/{{authors}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Alexander Alexandrovich Blok"
+}
+
+### Get
+
+GET http://{{host}}:{{port}}/{{root}}/{{authors}}/1
+Accept: application/json
+
+### Update
+
+PUT http://{{host}}:{{port}}/{{root}}/{{authors}}/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Vladimir Vladimirovich Nabokov"
+}
+
+### Delete
+
+DELETE http://{{host}}:{{port}}/{{root}}/{{authors}}/1
+
+### Search
+
+POST http://{{host}}:{{port}}/{{root}}/{{authors}}/search
+Accept: application/json
+Content-Type: application/json
+
+{
+  "page": "0",
+  "size": "10"
+}
+
+###

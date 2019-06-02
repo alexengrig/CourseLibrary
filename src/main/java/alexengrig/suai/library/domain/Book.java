@@ -19,4 +19,7 @@ public class Book {
 
     @OneToMany(fetch = FetchType.EAGER)
     private Set<Author> authors;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    private Publisher publisher;
 }

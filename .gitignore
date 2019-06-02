@@ -3,3 +3,5 @@
 db/
 target/
 library.iml
+webapp/node_modules/
+webapp/build/

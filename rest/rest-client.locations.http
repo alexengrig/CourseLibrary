@@ -5,7 +5,10 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "Shelf #1"
+  "note": "Some comment",
+  "shelf": {
+    "name": "#1"
+  }
 }
 
 ### Get
@@ -20,7 +23,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "Shelf #2"
+  "note": "Another comment"
 }
 
 ### Delete

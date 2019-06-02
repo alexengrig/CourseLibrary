@@ -1,9 +1,12 @@
 import React from 'react';
+import Routing from './components/Routing';
+
+import routes from './routes';
 import './assets/css/App.css';
 
 function App() {
   return (
-    <h1>Course Library</h1>
+    <Routing routes={routes} />
   );
 }
 

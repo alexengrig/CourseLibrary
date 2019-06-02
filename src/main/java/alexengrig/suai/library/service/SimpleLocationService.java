@@ -4,6 +4,7 @@ import alexengrig.suai.library.domain.Location;
 import alexengrig.suai.library.payload.BaseSearchCondition;
 import alexengrig.suai.library.repository.LocationRepository;
 import alexengrig.suai.library.repository.ShelfRepository;
+import alexengrig.suai.library.repository.ShelvingRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -16,6 +17,7 @@ import java.util.Optional;
 public class SimpleLocationService implements LocationService {
     private final LocationRepository repository;
     private final ShelfRepository shelfRepository;
+    private final ShelvingRepository shelvingRepository;
 
     @Override
     public Location save(Location location) {
@@ -23,6 +25,10 @@ public class SimpleLocationService implements LocationService {
                 .map(Location::getShelf)
                 .map(shelfRepository::save)
                 .ifPresent(location::setShelf);
+        Optional.of(location)
+                .map(Location::getShelving)
+                .map(shelvingRepository::save)
+                .ifPresent(location::setShelving);
         return repository.save(location);
     }
 

@@ -24,18 +24,18 @@ public class LocationController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> get(@PathVariable("id") Location location) {
-        return Optional.ofNullable(location)
+    public ResponseEntity<?> get(@PathVariable("id") Long locationId) {
+        return Optional.ofNullable(locationId)
+                .map(service::findById)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") Location oldLocation, @RequestBody Location location) {
-        return Optional.ofNullable(oldLocation)
-                .map(Location::getId)
+    public ResponseEntity<?> update(@PathVariable("id") Long locationId, @RequestBody Location location) {
+        return Optional.ofNullable(location)
                 .map(id -> {
-                    location.setId(id);
+                    location.setId(locationId);
                     return location;
                 })
                 .map(service::save)
@@ -44,9 +44,8 @@ public class LocationController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable("id") Location location) {
-        return Optional.ofNullable(location)
-                .map(Location::getId)
+    public ResponseEntity<?> delete(@PathVariable("id") Long locationId) {
+        return Optional.ofNullable(locationId)
                 .map(id -> {
                     service.deleteById(id);
                     return ResponseEntity.ok().build();

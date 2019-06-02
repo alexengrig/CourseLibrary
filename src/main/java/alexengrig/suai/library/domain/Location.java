@@ -15,4 +15,7 @@ public class Location {
 
     @OneToOne(fetch = FetchType.EAGER)
     private Shelf shelf;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    private Shelving shelving;
 }

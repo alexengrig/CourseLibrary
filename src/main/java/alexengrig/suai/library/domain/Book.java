@@ -2,11 +2,9 @@ package alexengrig.suai.library.domain;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.Year;
+import java.util.Set;
 
 @Data
 @Entity
@@ -18,4 +16,7 @@ public class Book {
     private String name;
     private String annotation;
     private Year year;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    private Set<Author> authors;
 }

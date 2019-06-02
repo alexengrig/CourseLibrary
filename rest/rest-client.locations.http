@@ -11,29 +11,36 @@ Content-Type: application/json
   },
   "shelving": {
     "name": "#1"
+  },
+  "library": {
+    "name": "Central Library N.V. Gogol"
   }
 }
 
 ### Get
 
-GET http://{{host}}:{{port}}/{{root}}/{{locations}}/166
+GET http://{{host}}:{{port}}/{{root}}/{{locations}}/196
 Accept: application/json
 
 ### Update
 
-PUT http://{{host}}:{{port}}/{{root}}/{{locations}}/166
+PUT http://{{host}}:{{port}}/{{root}}/{{locations}}/196
 Accept: application/json
 Content-Type: application/json
 
 {
   "note": "Another comment",
   "shelf": {
-    "id": 164,
+    "id": 193,
     "name": "#1"
   },
   "shelving": {
-    "id": 165,
+    "id": 194,
     "name": "#1"
+  },
+  "library": {
+    "id": 195,
+    "name": "Central Library N.V. Gogol"
   }
 }
 

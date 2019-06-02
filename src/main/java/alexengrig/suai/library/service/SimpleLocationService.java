@@ -2,6 +2,7 @@ package alexengrig.suai.library.service;
 
 import alexengrig.suai.library.domain.Location;
 import alexengrig.suai.library.payload.BaseSearchCondition;
+import alexengrig.suai.library.repository.LibraryRepository;
 import alexengrig.suai.library.repository.LocationRepository;
 import alexengrig.suai.library.repository.ShelfRepository;
 import alexengrig.suai.library.repository.ShelvingRepository;
@@ -18,6 +19,7 @@ public class SimpleLocationService implements LocationService {
     private final LocationRepository repository;
     private final ShelfRepository shelfRepository;
     private final ShelvingRepository shelvingRepository;
+    private final LibraryRepository libraryRepository;
 
     @Override
     public Location save(Location location) {
@@ -29,6 +31,10 @@ public class SimpleLocationService implements LocationService {
                 .map(Location::getShelving)
                 .map(shelvingRepository::save)
                 .ifPresent(location::setShelving);
+        Optional.of(location)
+                .map(Location::getLibrary)
+                .map(libraryRepository::save)
+                .ifPresent(location::setLibrary);
         return repository.save(location);
     }
 
